@@ -1,10 +1,25 @@
+# =========================
+# Spring Boot / Maven
+# =========================
+
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
+# =========================
+# Maven
+# =========================
+
+.mvn/
+mvnw
+mvnw.cmd
+
+# =========================
+# STS / Eclipse
+# =========================
+
 .apt_generated
 .classpath
 .factorypath
@@ -13,13 +28,19 @@ target/
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
+# =========================
+# IntelliJ IDEA
+# =========================
+
+.idea/
 *.iws
 *.iml
 *.ipr
 
-### NetBeans ###
+# =========================
+# NetBeans
+# =========================
+
 /nbproject/private/
 /nbbuild/
 /dist/
@@ -29,5 +50,42 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### VS Code ###
+# =========================
+# VS Code
+# =========================
+
 .vscode/
+.vscode/*
+!.vscode/extensions.json
+
+# =========================
+# Node / React
+# =========================
+
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# =========================
+# Logs
+# =========================
+
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =========================
+# OS / IDE
+# =========================
+
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
