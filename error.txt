@@ -1,0 +1,119 @@
+Picked up JAVA_TOOL_OPTIONS: -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8
+[0.016s][warning][cds] The shared archive file was created by a different version or build of HotSpot
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.kaviya:securevault >-----------------------
+[INFO] Building securevault 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.5.4:run (default-cli) > test-compile @ securevault >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ securevault ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.0:compile (default-compile) @ securevault ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ securevault ---
+[INFO] skip non existing resourceDirectory C:\Users\Kavya\Documents\Springbootprojects\securevault\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ securevault ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:3.5.4:run (default-cli) < test-compile @ securevault <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.5.4:run (default-cli) @ securevault ---
+[INFO] Attaching agents: []
+Picked up JAVA_TOOL_OPTIONS: -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8
+[0.015s][warning][cds] The shared archive file was created by a different version or build of HotSpot
+22:47:52.597 [main] ERROR org.springframework.boot.SpringApplication -- Application run failed
+java.lang.UnsatisfiedLinkError: 'boolean java.io.Console.istty()'
+	at java.base/java.io.Console.istty(Native Method)
+	at java.base/java.io.Console.<clinit>(Console.java:356)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
+	at java.base/java.lang.invoke.MethodHandles$Lookup.ensureInitialized(MethodHandles.java:2912)
+	at java.base/jdk.internal.access.SharedSecrets.ensureClassInitialized(SharedSecrets.java:537)
+	at java.base/jdk.internal.access.SharedSecrets.getJavaIOAccess(SharedSecrets.java:278)
+	at java.base/java.lang.System.console(System.java:302)
+	at org.springframework.boot.logging.LoggingSystemProperties.getConsole(LoggingSystemProperties.java:101)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystemProperties.getConsole(LogbackLoggingSystemProperties.java:76)
+	at org.springframework.boot.logging.LoggingSystemProperties.getDefaultConsoleCharset(LoggingSystemProperties.java:165)
+	at org.springframework.boot.logging.LoggingSystemProperties.apply(LoggingSystemProperties.java:126)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystemProperties.apply(LogbackLoggingSystemProperties.java:86)
+	at org.springframework.boot.logging.LoggingSystemProperties.apply(LoggingSystemProperties.java:110)
+	at org.springframework.boot.logging.LoggingSystemProperties.apply(LoggingSystemProperties.java:105)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:291)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.kaviya.securevault.SecurevaultApplication.main(SecurevaultApplication.java:10)
+Exception in thread "main" java.lang.IllegalStateException: java.lang.UnsatisfiedLinkError: 'boolean java.io.Console.istty()'
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:823)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:328)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.kaviya.securevault.SecurevaultApplication.main(SecurevaultApplication.java:10)
+Caused by: java.lang.UnsatisfiedLinkError: 'boolean java.io.Console.istty()'
+	at java.base/java.io.Console.istty(Native Method)
+	at java.base/java.io.Console.<clinit>(Console.java:356)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unsafe.java:1160)
+	at java.base/java.lang.invoke.MethodHandles$Lookup.ensureInitialized(MethodHandles.java:2912)
+	at java.base/jdk.internal.access.SharedSecrets.ensureClassInitialized(SharedSecrets.java:537)
+	at java.base/jdk.internal.access.SharedSecrets.getJavaIOAccess(SharedSecrets.java:278)
+	at java.base/java.lang.System.console(System.java:302)
+	at org.springframework.boot.logging.LoggingSystemProperties.getConsole(LoggingSystemProperties.java:101)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystemProperties.getConsole(LogbackLoggingSystemProperties.java:76)
+	at org.springframework.boot.logging.LoggingSystemProperties.getDefaultConsoleCharset(LoggingSystemProperties.java:165)
+	at org.springframework.boot.logging.LoggingSystemProperties.apply(LoggingSystemProperties.java:126)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystemProperties.apply(LogbackLoggingSystemProperties.java:86)
+	at org.springframework.boot.logging.LoggingSystemProperties.apply(LoggingSystemProperties.java:110)
+	at org.springframework.boot.logging.LoggingSystemProperties.apply(LoggingSystemProperties.java:105)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:291)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)
+	... 3 more
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.827 s
+[INFO] Finished at: 2026-08-02T22:47:52+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.5.4:run (default-cli) on project securevault: Process terminated with exit code: 1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
