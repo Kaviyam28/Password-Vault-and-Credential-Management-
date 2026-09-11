@@ -1,3 +1,4 @@
+
 package com.kaviya.securevault.service;
 
 import java.time.LocalDateTime;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.kaviya.securevault.entity.AuditLog;
 import com.kaviya.securevault.entity.SecurityAlert;
 import com.kaviya.securevault.entity.SuspiciousActivity;
+import com.kaviya.securevault.entity.User;
 import com.kaviya.securevault.repository.AuditLogRepository;
 import com.kaviya.securevault.repository.LoginActivityRepository;
 import com.kaviya.securevault.repository.SecurityAlertRepository;
@@ -33,6 +35,15 @@ public class SecurityService {
 
     @Autowired
     private AuditLogRepository auditLogRepository;
+
+    @Autowired
+    private NotificationService notificationService;
+
+    @Autowired
+    private EmailService emailService;
+
+    @Autowired
+    private UserService userService;
 
     public void analyzeFailedLogin(String email) {
 
@@ -75,6 +86,33 @@ public class SecurityService {
                     "SECURITY_ALERT_CREATED",
                     "High severity security alert generated for multiple failed login attempts"
             );
+
+            // Create in-app notification
+            User user = userService
+                    .getUserByEmail(email)
+                    .orElse(null);
+
+            if (user != null) {
+
+                notificationService.createNotification(
+                        user.getId().toString(),
+                        "SECURITY_ALERT",
+                        "Security Alert",
+                        "Multiple failed login attempts were detected on your SecureVault account. Please verify your account."
+                );
+
+                // Send security alert email
+                emailService.sendNotificationEmail(
+                        user.getEmail(),
+                        "Security Alert",
+                        "Multiple failed login attempts were detected on your SecureVault account. Please verify your account."
+                );
+
+                System.out.println(
+                        "Security notification created for: "
+                        + email
+                );
+            }
         }
     }
 

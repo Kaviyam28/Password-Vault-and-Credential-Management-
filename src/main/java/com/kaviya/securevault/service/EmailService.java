@@ -31,4 +31,31 @@ public class EmailService {
 
         mailSender.send(message);
     }
+
+    // ==========================================
+    // SEND NOTIFICATION EMAIL
+    // ==========================================
+    public void sendNotificationEmail(
+            String toEmail,
+            String title,
+            String messageText) {
+
+        SimpleMailMessage message
+                = new SimpleMailMessage();
+
+        message.setFrom(fromEmail);
+        message.setTo(toEmail);
+        message.setSubject("SecureVault - " + title);
+
+        message.setText(
+                "Hello,\n\n"
+                + messageText
+                + "\n\n"
+                + "Please log in to your SecureVault account "
+                + "for more details.\n\n"
+                + "Regards,\n"
+                + "SecureVault Team");
+
+        mailSender.send(message);
+    }
 }

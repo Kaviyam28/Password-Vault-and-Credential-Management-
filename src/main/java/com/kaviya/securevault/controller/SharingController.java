@@ -1,6 +1,6 @@
 package com.kaviya.securevault.controller;
-
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,9 +37,9 @@ public class SharingController {
     @Autowired
     private SharingService sharingService;
 
-    // =====================================================
+    // ==========================================
     // SHARE CREDENTIAL
-    // =====================================================
+    // ==========================================
     @PostMapping("/share")
     public ResponseEntity<?> shareCredential(
             @RequestBody ShareCredentialRequest request) {
@@ -59,35 +59,33 @@ public class SharingController {
         }
     }
 
-    // =====================================================
+    // ==========================================
     // GET RECEIVED CREDENTIALS
-    // =====================================================
+    // ==========================================
     @GetMapping("/received/{email}")
     public ResponseEntity<List<SharedCredential>>
             getReceivedCredentials(
                     @PathVariable String email) {
 
         return ResponseEntity.ok(
-                sharingService.getReceivedCredentials(email)
-        );
+                sharingService.getReceivedCredentials(email));
     }
 
-    // =====================================================
+    // ==========================================
     // GET SENT CREDENTIALS
-    // =====================================================
+    // ==========================================
     @GetMapping("/sent/{email}")
     public ResponseEntity<List<SharedCredential>>
             getSentCredentials(
                     @PathVariable String email) {
 
         return ResponseEntity.ok(
-                sharingService.getSentCredentials(email)
-        );
+                sharingService.getSentCredentials(email));
     }
 
-    // =====================================================
+    // ==========================================
     // REVOKE SHARING
-    // =====================================================
+    // ==========================================
     @DeleteMapping("/{id}")
     public ResponseEntity<?> revokeSharing(
             @PathVariable Long id) {
@@ -97,8 +95,7 @@ public class SharingController {
             sharingService.revokeSharing(id);
 
             return ResponseEntity.ok(
-                    "Credential sharing revoked successfully"
-            );
+                    "Sharing revoked successfully");
 
         } catch (RuntimeException e) {
 
@@ -108,16 +105,16 @@ public class SharingController {
         }
     }
 
-    // =====================================================
-    // VIEW SHARED CREDENTIAL
-    // =====================================================
+    // ==========================================
+    // GET SHARED CREDENTIAL
+    // ==========================================
     @GetMapping("/credential/{sharingId}")
     public ResponseEntity<?> getSharedCredential(
             @PathVariable Long sharingId) {
 
         try {
 
-            PasswordEntry credential
+            Map<String, Object> credential
                     = sharingService.getSharedCredential(
                             sharingId);
 
@@ -131,9 +128,9 @@ public class SharingController {
         }
     }
 
-    // =====================================================
-    // EDIT SHARED CREDENTIAL
-    // =====================================================
+    // ==========================================
+    // UPDATE SHARED CREDENTIAL
+    // ==========================================
     @PutMapping("/credential/{sharingId}")
     public ResponseEntity<?> updateSharedCredential(
             @PathVariable Long sharingId,

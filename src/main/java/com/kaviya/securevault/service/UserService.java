@@ -14,6 +14,9 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    // ==========================================
+    // REGISTER
+    // ==========================================
     public String registerUser(User user) {
 
         if (userRepository.existsByEmail(user.getEmail())) {
@@ -25,6 +28,9 @@ public class UserService {
         return "Your account has been created successfully!";
     }
 
+    // ==========================================
+    // LOGIN
+    // ==========================================
     public String loginUser(User user) {
 
         Optional<User> existingUser
@@ -37,12 +43,17 @@ public class UserService {
             if (dbUser.getPassword().equals(user.getPassword())) {
 
                 return "Login Successful";
-
             }
-
         }
 
         return "Invalid Email or Password";
     }
 
+    // ==========================================
+    // GET USER BY EMAIL
+    // ==========================================
+    public Optional<User> getUserByEmail(String email) {
+
+        return userRepository.findByEmail(email);
+    }
 }
