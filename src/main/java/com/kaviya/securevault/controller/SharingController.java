@@ -1,4 +1,5 @@
 package com.kaviya.securevault.controller;
+
 import java.util.List;
 import java.util.Map;
 
@@ -29,7 +30,8 @@ import com.kaviya.securevault.service.SharingService;
             "http://localhost:5176",
             "http://localhost:5177",
             "http://localhost:5178",
-            "http://localhost:5179"
+            "http://localhost:5179",
+            "http://localhost:3000"
         }
 )
 public class SharingController {

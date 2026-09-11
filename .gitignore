@@ -89,3 +89,5 @@ lerna-debug.log*
 *.njsproj
 *.sln
 *.sw?
+# Docker environment secrets
+src/main/resources/application-docker.properties

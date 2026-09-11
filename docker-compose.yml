@@ -1,0 +1,26 @@
+services:
+
+  postgres:
+    image: postgres:17
+    container_name: securevault-postgres
+    environment:
+      POSTGRES_DB: securevault
+      POSTGRES_USER: securevault
+      POSTGRES_PASSWORD: securevault123
+    ports:
+      - "5432:5432"
+    volumes:
+      - securevault-postgres-data:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    container_name: securevault-backend
+    depends_on:
+      - postgres
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+    ports:
+      - "8080:8080"
+
+volumes:
+  securevault-postgres-data:
