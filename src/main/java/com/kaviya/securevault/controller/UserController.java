@@ -114,11 +114,15 @@ public class UserController {
                 // ==========================================
                 // SEND LOGIN EMAIL
                 // ==========================================
-                emailService.sendNotificationEmail(
-                        loggedInUser.getEmail(),
-                        "New Login Detected",
-                        "New login detected on your SecureVault account."
-                );
+                try {
+    emailService.sendNotificationEmail(
+            loggedInUser.getEmail(),
+            "New Login Detected",
+            "New login detected on your SecureVault account."
+    );
+} catch (Exception e) {
+    System.out.println("Email notification failed: " + e.getMessage());
+}
             }
 
         } // ==========================================
