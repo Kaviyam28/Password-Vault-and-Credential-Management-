@@ -34,7 +34,7 @@ function ReceivedCredentials() {
 
     try {
       const response = await axios.get(
-        `https://password-vault-and-credential-management-sku2.onrender.com/api/sharing/received/${encodeURIComponent(
+        `https://password-vault-and-credential-management-4n8d.onrender.com/api/sharing/received/${encodeURIComponent(
           userEmail
         )}`
       );
@@ -86,7 +86,7 @@ function ReceivedCredentials() {
       setViewLoading(true);
 
       const response = await axios.get(
-        `https://password-vault-and-credential-management-sku2.onrender.com/api/sharing/credential/${sharingId}`
+        `https://password-vault-and-credential-management-4n8d.onrender.com/api/sharing/credential/${sharingId}`
       );
 
       const credential = response.data;
@@ -232,7 +232,7 @@ function ReceivedCredentials() {
       setSaving(true);
 
       const response = await axios.put(
-        `https://password-vault-and-credential-management-sku2.onrender.com/api/sharing/credential/${selectedCredential.sharingId}`,
+        `https://password-vault-and-credential-management-4n8d.onrender.com/api/sharing/credential/${selectedCredential.sharingId}`,
         {
           website: editForm.website,
           username: editForm.username,

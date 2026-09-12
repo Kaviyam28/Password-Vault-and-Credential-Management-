@@ -24,7 +24,7 @@ function SecurityAudit() {
       setLoading(true);
 
       const response = await axios.get(
-        `https://password-vault-and-credential-management-sku2.onrender.com/api/security/audit/${encodeURIComponent(
+        `https://password-vault-and-credential-management-4n8d.onrender.com/api/security/audit/${encodeURIComponent(
           userEmail
         )}`
       );

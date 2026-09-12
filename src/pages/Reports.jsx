@@ -39,23 +39,23 @@ function Reports() {
         recentResponse,
       ] = await Promise.all([
         axios.get(
-          `https://password-vault-and-credential-management-sku2.onrender.com/api/reports/password-health/${encodedEmail}`
+          `https://password-vault-and-credential-management-4n8d.onrender.com/api/reports/password-health/${encodedEmail}`
         ),
 
         axios.get(
-          `https://password-vault-and-credential-management-sku2.onrender.com/api/reports/login-activity/total/${encodedEmail}`
+          `https://password-vault-and-credential-management-4n8d.onrender.com/api/reports/login-activity/total/${encodedEmail}`
         ),
 
         axios.get(
-          `https://password-vault-and-credential-management-sku2.onrender.com/api/reports/login-activity/successful/${encodedEmail}`
+          `https://password-vault-and-credential-management-4n8d.onrender.com/api/reports/login-activity/successful/${encodedEmail}`
         ),
 
         axios.get(
-          `https://password-vault-and-credential-management-sku2.onrender.com/api/reports/login-activity/failed/${encodedEmail}`
+          `https://password-vault-and-credential-management-4n8d.onrender.com/api/reports/login-activity/failed/${encodedEmail}`
         ),
 
         axios.get(
-          `https://password-vault-and-credential-management-sku2.onrender.com/api/reports/login-activity/recent/${encodedEmail}`
+          `https://password-vault-and-credential-management-4n8d.onrender.com/api/reports/login-activity/recent/${encodedEmail}`
         ),
       ]);
 

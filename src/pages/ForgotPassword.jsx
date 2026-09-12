@@ -61,7 +61,7 @@ function ForgotPassword() {
       setIsSendingOtp(true);
 
       const response = await axios.post(
-        "https://password-vault-and-credential-management-sku2.onrender.com/api/password/forgot",
+        "https://password-vault-and-credential-management-4n8d.onrender.com/api/password/forgot",
         {
           email: email.trim()
         }
@@ -178,7 +178,7 @@ function ForgotPassword() {
       setIsVerifyingOtp(true);
 
       const response = await axios.post(
-        "https://password-vault-and-credential-management-sku2.onrender.com/api/password/verify-otp",
+        "https://password-vault-and-credential-management-4n8d.onrender.com/api/password/verify-otp",
         {
           email: email.trim(),
           otp: otp.trim()
@@ -319,7 +319,7 @@ function ForgotPassword() {
       setIsResettingPassword(true);
 
       const response = await axios.post(
-        "https://password-vault-and-credential-management-sku2.onrender.com/api/password/reset",
+        "https://password-vault-and-credential-management-4n8d.onrender.com/api/password/reset",
         {
           email: email.trim(),
           newPassword: newPassword

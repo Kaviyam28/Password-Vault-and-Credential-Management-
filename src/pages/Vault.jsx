@@ -47,7 +47,7 @@ function Vault() {
       setLoadingPasswords(true);
 
       const response = await axios.get(
-        `https://password-vault-and-credential-management-sku2.onrender.com/api/passwords/${encodeURIComponent(
+        `https://password-vault-and-credential-management-4n8d.onrender.com/api/passwords/${encodeURIComponent(
           userEmail
         )}`
       );
@@ -251,7 +251,7 @@ function Vault() {
       setLoading(true);
 
       await axios.post(
-  "https://password-vault-and-credential-management-sku2.onrender.com/api/passwords",
+  "https://password-vault-and-credential-management-4n8d.onrender.com/api/passwords",
   {
     website: website.trim(),
     username: username.trim(),
@@ -334,7 +334,7 @@ function Vault() {
       setDeletingId(id);
 
       await axios.delete(
-        `https://password-vault-and-credential-management-sku2.onrender.com/api/passwords/${id}`
+        `https://password-vault-and-credential-management-4n8d.onrender.com/api/passwords/${id}`
       );
 
       setMessage("Password deleted successfully.");
@@ -431,7 +431,7 @@ function Vault() {
       setLoading(true);
 
       await axios.put(
-        `https://password-vault-and-credential-management-sku2.onrender.com/api/passwords/${editId}`,
+        `https://password-vault-and-credential-management-4n8d.onrender.com/api/passwords/${editId}`,
         {
           website: website.trim(),
           username: username.trim(),

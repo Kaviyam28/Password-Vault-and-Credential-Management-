@@ -79,7 +79,7 @@ function Home() {
       setLoading(true);
 
       const response = await axios.get(
-        `https://password-vault-and-credential-management-sku2.onrender.com/api/passwords/${encodeURIComponent(userEmail)}`
+        `https://password-vault-and-credential-management-4n8d.onrender.com/api/passwords/${encodeURIComponent(userEmail)}`
       );
 
       setPasswords(response.data || []);
@@ -105,15 +105,15 @@ function Home() {
         auditResponse
       ] = await Promise.all([
         axios.get(
-          `https://password-vault-and-credential-management-sku2.onrender.com/api/security/alerts/${encodeURIComponent(userEmail)}`
+          `https://password-vault-and-credential-management-4n8d.onrender.com/api/security/alerts/${encodeURIComponent(userEmail)}`
         ),
 
         axios.get(
-          `https://password-vault-and-credential-management-sku2.onrender.com/api/security/suspicious/${encodeURIComponent(userEmail)}`
+          `https://password-vault-and-credential-management-4n8d.onrender.com/api/security/suspicious/${encodeURIComponent(userEmail)}`
         ),
 
         axios.get(
-          `https://password-vault-and-credential-management-sku2.onrender.com/api/security/audit/${encodeURIComponent(userEmail)}`
+          `https://password-vault-and-credential-management-4n8d.onrender.com/api/security/audit/${encodeURIComponent(userEmail)}`
         )
       ]);
 
@@ -140,7 +140,7 @@ function Home() {
       setLoginAnalyticsLoading(true);
 
       const response = await axios.get(
-        `https://password-vault-and-credential-management-sku2.onrender.com/api/security-analytics/${encodeURIComponent(userEmail)}`
+        `https://password-vault-and-credential-management-4n8d.onrender.com/api/security-analytics/${encodeURIComponent(userEmail)}`
       );
 
       setLoginAnalytics({
@@ -174,7 +174,7 @@ function Home() {
 
       // First get the logged-in user's database ID
       const userResponse = await axios.get(
-        `https://password-vault-and-credential-management-sku2.onrender.com/api/user/${encodeURIComponent(userEmail)}`
+        `https://password-vault-and-credential-management-4n8d.onrender.com/api/user/${encodeURIComponent(userEmail)}`
       );
 
       const userId = userResponse.data?.id;
@@ -187,7 +187,7 @@ function Home() {
 
       // Get notifications using the user ID
       const response = await axios.get(
-        `https://password-vault-and-credential-management-sku2.onrender.com/api/notifications/${userId}`
+        `https://password-vault-and-credential-management-4n8d.onrender.com/api/notifications/${userId}`
       );
 
       setNotifications(response.data || []);
@@ -210,7 +210,7 @@ function Home() {
   const markNotificationAsRead = async (notificationId) => {
     try {
       await axios.put(
-        `https://password-vault-and-credential-management-sku2.onrender.com/api/notifications/read/${notificationId}`
+        `https://password-vault-and-credential-management-4n8d.onrender.com/api/notifications/read/${notificationId}`
       );
 
       setNotifications((previousNotifications) =>

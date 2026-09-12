@@ -27,7 +27,7 @@ function SuspiciousActivities() {
       setErrorMessage("");
 
       const response = await axios.get(
-        `https://password-vault-and-credential-management-sku2.onrender.com/api/security/suspicious/${encodeURIComponent(
+        `https://password-vault-and-credential-management-4n8d.onrender.com/api/security/suspicious/${encodeURIComponent(
           userEmail
         )}`
       );
