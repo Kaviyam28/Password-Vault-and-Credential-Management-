@@ -142,7 +142,7 @@ function ShareCredential({ credential, onClose }) {
       // SEND TO SPRING BOOT
       // ==============================
       const response = await axios.post(
-        "http://localhost:8080/api/sharing/share",
+        "https://password-vault-and-credential-management-sku2.onrender.com/api/sharing/share",
         shareData,
         {
           headers: {

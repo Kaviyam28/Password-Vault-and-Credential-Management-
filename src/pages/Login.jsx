@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
 import {
-  FaCloud,
-  FaFingerprint,
-  FaLock,
-  FaShieldAlt
+    FaCloud,
+    FaFingerprint,
+    FaLock,
+    FaShieldAlt
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
@@ -57,7 +57,7 @@ function Login() {
       setIsLoggingIn(true);
 
       const response = await axios.post(
-        "http://localhost:8080/api/login",
+        "https://password-vault-and-credential-management-sku2.onrender.com/api/login",
         {
           email: email.trim(),
           password: password

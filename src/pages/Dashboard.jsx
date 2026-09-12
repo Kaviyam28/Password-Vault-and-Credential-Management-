@@ -42,7 +42,7 @@ function Dashboard() {
       setError("");
 
       const response = await axios.get(
-        `http://localhost:8080/api/sharing/received/${encodeURIComponent(
+        `https://password-vault-and-credential-management-sku2.onrender.com/api/sharing/received/${encodeURIComponent(
           userEmail
         )}`
       );
@@ -94,13 +94,13 @@ function Dashboard() {
         await Promise.all([
 
           axios.get(
-            `http://localhost:8080/api/reports/password-health/${encodeURIComponent(
+            `https://password-vault-and-credential-management-sku2.onrender.com/api/reports/password-health/${encodeURIComponent(
               userEmail
             )}`
           ),
 
           axios.get(
-            `http://localhost:8080/api/reports/login-activity/${encodeURIComponent(
+            `https://password-vault-and-credential-management-sku2.onrender.com/api/reports/login-activity/${encodeURIComponent(
               userEmail
             )}`
           )
@@ -144,7 +144,7 @@ function Dashboard() {
     try {
 
       const response = await axios.get(
-        `http://localhost:8080/api/sharing/open/${sharingId}`
+        `https://password-vault-and-credential-management-sku2.onrender.com/api/sharing/open/${sharingId}`
       );
 
       const credential = response.data;

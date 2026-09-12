@@ -47,7 +47,7 @@ function Vault() {
       setLoadingPasswords(true);
 
       const response = await axios.get(
-        `http://localhost:8080/api/passwords/${encodeURIComponent(
+        `https://password-vault-and-credential-management-sku2.onrender.com/api/passwords/${encodeURIComponent(
           userEmail
         )}`
       );
@@ -251,15 +251,15 @@ function Vault() {
       setLoading(true);
 
       await axios.post(
-        "http://localhost:8080/api/passwords",
-        {
-          website: website.trim(),
-          username: username.trim(),
-          password: password,
-          notes: notes.trim(),
-          userEmail: userEmail,
-        }
-      );
+  "https://password-vault-and-credential-management-sku2.onrender.com/api/passwords",
+  {
+    website: website.trim(),
+    username: username.trim(),
+    password: password,
+    notes: notes.trim(),
+    userEmail: userEmail,
+  }
+);
 
       setMessage("Password saved successfully.");
       setMessageType("success");
@@ -334,7 +334,7 @@ function Vault() {
       setDeletingId(id);
 
       await axios.delete(
-        `http://localhost:8080/api/passwords/${id}`
+        `https://password-vault-and-credential-management-sku2.onrender.com/api/passwords/${id}`
       );
 
       setMessage("Password deleted successfully.");
@@ -431,7 +431,7 @@ function Vault() {
       setLoading(true);
 
       await axios.put(
-        `http://localhost:8080/api/passwords/${editId}`,
+        `https://password-vault-and-credential-management-sku2.onrender.com/api/passwords/${editId}`,
         {
           website: website.trim(),
           username: username.trim(),

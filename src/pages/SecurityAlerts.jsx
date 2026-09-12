@@ -32,7 +32,7 @@ function SecurityAlerts() {
       setErrorMessage("");
 
       const response = await axios.get(
-        `http://localhost:8080/api/security/alerts/${encodeURIComponent(
+        `https://password-vault-and-credential-management-sku2.onrender.com/api/security/alerts/${encodeURIComponent(
           userEmail
         )}`
       );

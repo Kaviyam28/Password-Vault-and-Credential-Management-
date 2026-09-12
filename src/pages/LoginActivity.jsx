@@ -51,7 +51,7 @@ function LoginActivity() {
       setMessageType("");
 
       const response = await axios.get(
-        `http://localhost:8080/api/login-activity/${encodeURIComponent(
+        `https://password-vault-and-credential-management-sku2.onrender.com/api/login-activity/${encodeURIComponent(
           userEmail
         )}`
       );

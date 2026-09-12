@@ -26,7 +26,7 @@ function SecurityAnalytics() {
             setError("");
 
             const response = await axios.get(
-                `http://localhost:8080/api/security-analytics/${encodeURIComponent(userEmail)}`
+                `https://password-vault-and-credential-management-sku2.onrender.com/api/security-analytics/${encodeURIComponent(userEmail)}`
             );
 
             setAnalytics(response.data);

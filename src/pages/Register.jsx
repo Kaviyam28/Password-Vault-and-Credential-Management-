@@ -99,7 +99,7 @@ function Register() {
       setIsRegistering(true);
 
       const response = await axios.post(
-        "http://localhost:8080/api/register",
+        "https://password-vault-and-credential-management-sku2.onrender.com/api/register",
         {
           userName: formData.userName.trim(),
           email: formData.email.trim(),
