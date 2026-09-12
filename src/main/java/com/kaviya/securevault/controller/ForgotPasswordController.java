@@ -17,7 +17,10 @@ import com.kaviya.securevault.service.OtpService;
 
 @RestController
 @RequestMapping("/api/password")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://password-vault-and-credential-manag.vercel.app"
+})
 public class ForgotPasswordController {
 
     @Autowired
