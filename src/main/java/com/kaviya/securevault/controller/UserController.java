@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kaviya.securevault.entity.User;
-import com.kaviya.securevault.service.EmailService;
 import com.kaviya.securevault.service.LoginActivityService;
 import com.kaviya.securevault.service.NotificationService;
 import com.kaviya.securevault.service.SecurityService;
@@ -29,7 +28,8 @@ import jakarta.servlet.http.HttpServletRequest;
     "http://localhost:5178",
     "http://localhost:5179",
     "http://localhost:3000",
-"https://password-vault-and-credential-manag.vercel.app"
+    "https://password-vault-and-credential-manag.vercel.app",
+    "https://password-vault-and-credential-management-rl16fzfxn-kaviya18.vercel.app"
 })
 public class UserController {
 
@@ -44,9 +44,6 @@ public class UserController {
 
     @Autowired
     private NotificationService notificationService;
-
-    @Autowired
-    private EmailService emailService;
 
     // ==========================================
     // REGISTER
@@ -84,7 +81,9 @@ public class UserController {
         // ==========================================
         if (result.equals("Login Successful")) {
 
-            // Save login activity
+            // ------------------------------------------
+            // SAVE LOGIN ACTIVITY
+            // ------------------------------------------
             loginActivityService.saveLoginActivity(
                     user.getEmail(),
                     "SUCCESS",
@@ -92,16 +91,16 @@ public class UserController {
                     null
             );
 
-            // ==========================================
+            // ------------------------------------------
             // GET ACTUAL USER FROM DATABASE
-            // ==========================================
+            // ------------------------------------------
             User loggedInUser = userService
                     .getUserByEmail(user.getEmail())
                     .orElse(null);
 
-            // ==========================================
+            // ------------------------------------------
             // CREATE LOGIN NOTIFICATION
-            // ==========================================
+            // ------------------------------------------
             if (loggedInUser != null) {
 
                 notificationService.createNotification(
@@ -111,18 +110,15 @@ public class UserController {
                         "New login detected on your SecureVault account."
                 );
 
-                // ==========================================
-                // SEND LOGIN EMAIL
-                // ==========================================
-                try {
-    emailService.sendNotificationEmail(
-            loggedInUser.getEmail(),
-            "New Login Detected",
-            "New login detected on your SecureVault account."
-    );
-} catch (Exception e) {
-    System.out.println("Email notification failed: " + e.getMessage());
-}
+                // ------------------------------------------
+                // LOGIN EMAIL TEMPORARILY DISABLED
+                // ------------------------------------------
+                // Gmail SMTP is timing out on Render.
+                // Email sending is disabled so that login
+                // happens immediately.
+                System.out.println(
+                        "Login successful. Email notification skipped."
+                );
             }
 
         } // ==========================================
@@ -130,7 +126,9 @@ public class UserController {
         // ==========================================
         else {
 
-            // Save failed login activity
+            // ------------------------------------------
+            // SAVE FAILED LOGIN ACTIVITY
+            // ------------------------------------------
             loginActivityService.saveLoginActivity(
                     user.getEmail(),
                     "FAILED",
@@ -138,14 +136,17 @@ public class UserController {
                     "Invalid Email or Password"
             );
 
-            // Analyze failed login attempts
+            // ------------------------------------------
+            // ANALYZE FAILED LOGIN
+            // ------------------------------------------
             securityService.analyzeFailedLogin(
                     user.getEmail()
             );
         }
 
+        // ==========================================
+        // RETURN LOGIN RESULT
+        // ==========================================
         return result;
     }
-
 }
-
