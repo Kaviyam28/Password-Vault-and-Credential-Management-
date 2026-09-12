@@ -22,7 +22,10 @@ import com.kaviya.securevault.service.ReportService;
     "http://localhost:5176",
     "http://localhost:5177",
     "http://localhost:5178",
-    "http://localhost:5179"
+    "http://localhost:5179",
+    "http://localhost:3000",
+    "https://password-vault-and-credential-manag.vercel.app",
+    "https://password-vault-and-credential-management-rl16fzfxn-kaviya18.vercel.app"
 })
 public class ReportController {
 
