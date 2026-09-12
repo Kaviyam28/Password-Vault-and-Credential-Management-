@@ -26,7 +26,8 @@ import com.kaviya.securevault.service.PasswordService;
     "http://localhost:5177",
     "http://localhost:5178",
     "http://localhost:5179",
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "https://password-vault-and-credential-manag.vercel.app"
 })
 public class PasswordController {
 
@@ -62,3 +63,4 @@ public class PasswordController {
         return "Password deleted successfully!";
     }
 }
+

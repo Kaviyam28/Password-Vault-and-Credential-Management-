@@ -79,3 +79,4 @@ public class ForgotPasswordController {
         return "Password changed successfully.";
     }
 }
+

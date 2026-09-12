@@ -23,7 +23,8 @@ import com.kaviya.securevault.service.NotificationService;
     "http://localhost:5177",
     "http://localhost:5178",
     "http://localhost:5179",
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "https://password-vault-and-credential-manag.vercel.app"
 })
 public class NotificationController {
 
@@ -50,3 +51,4 @@ public class NotificationController {
         return notificationService.markAsRead(id);
     }
 }
+
