@@ -1,0 +1,241 @@
+/* ==========================================
+   SECURITY ALERTS PAGE
+========================================== */
+
+.security-alerts-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #f3f6fa;
+  font-family: Arial, sans-serif;
+  color: #222;
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.security-alerts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 32px;
+
+  background: #f4f7fb;
+  box-sizing: border-box;
+}
+
+.security-alerts-header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #222;
+}
+
+.security-alerts-back-button {
+  padding: 11px 20px;
+
+  background: #1565c0;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.security-alerts-back-button:hover {
+  opacity: 0.9;
+}
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.security-alerts-container {
+  margin: 30px 32px;
+
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   ALERT CARD
+========================================== */
+
+.security-alert-card {
+  border: 1px solid #ddd;
+
+  border-radius: 10px;
+
+  padding: 20px;
+
+  margin-bottom: 15px;
+
+  background: #fafafa;
+
+  box-sizing: border-box;
+}
+
+.security-alert-card:last-child {
+  margin-bottom: 0;
+}
+
+.security-alert-card h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+
+  font-size: 21px;
+
+  color: #1565c0;
+
+  word-break: break-word;
+}
+
+.security-alert-card p {
+  margin: 10px 0;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+/* ==========================================
+   SEVERITY
+========================================== */
+
+.security-alert-high {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+/* ==========================================
+   NO DATA
+========================================== */
+
+.security-alerts-no-data {
+  text-align: center;
+
+  color: #777;
+
+  padding: 30px 20px;
+
+  margin: 0;
+
+  line-height: 1.5;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+  .security-alerts-header {
+    padding: 18px 24px;
+  }
+
+  .security-alerts-header h1 {
+    font-size: 25px;
+  }
+
+  .security-alerts-container {
+    margin: 25px 24px;
+    padding: 22px;
+  }
+
+  .security-alert-card {
+    padding: 18px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+  .security-alerts-header {
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 15px;
+
+    padding: 18px 15px;
+  }
+
+  .security-alerts-header h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .security-alerts-back-button {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .security-alerts-container {
+    margin: 15px 12px;
+    padding: 15px;
+
+    border-radius: 10px;
+  }
+
+  .security-alert-card {
+    padding: 16px;
+
+    border-radius: 8px;
+  }
+
+  .security-alert-card h2 {
+    font-size: 18px;
+  }
+
+  .security-alert-card p {
+    font-size: 14px;
+  }
+
+  .security-alerts-no-data {
+    padding: 25px 10px;
+    font-size: 14px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+  .security-alerts-header {
+    padding: 15px 10px;
+  }
+
+  .security-alerts-header h1 {
+    font-size: 20px;
+  }
+
+  .security-alerts-container {
+    margin: 12px 8px;
+    padding: 12px;
+  }
+
+  .security-alert-card {
+    padding: 14px;
+  }
+
+  .security-alert-card h2 {
+    font-size: 17px;
+  }
+
+  .security-alert-card p {
+    font-size: 13px;
+  }
+}
